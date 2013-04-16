@@ -26,7 +26,7 @@ function (
     audienceScience,
     quantcast
 ) {
-    
+
     var config,
         adsSwitchedOn,
         slots;
@@ -38,12 +38,10 @@ function (
         generateMiddleSlot(config);
 
         var slotHolders = document.querySelectorAll('.ad-slot'),
-            size = 'base';
+            size = detect.getLayoutMode();
 
-        if(window.innerWidth > 1024) {
+        if (size == 'tablet' || size == 'desktop') {
             size = 'extended';
-        } else if(window.innerWidth > 810) {
-            size = 'median';
         }
 
         adsSwitchedOn = !userPrefs.isOff('adverts');
@@ -51,14 +49,14 @@ function (
         // Run through slots and create documentWrite for each.
         // Other ad types such as iframes and custom can be plugged in here later
         if (adsSwitchedOn) {
-            
+
             for(var i = 0, j = slotHolders.length; i < j; ++i) {
                 var name = slotHolders[i].getAttribute('data-' + size);
                 var slot = new DocumentWriteSlot(name, slotHolders[i].querySelector('.ad-container'));
                 slot.setDimensions(dimensionMap[name]);
                 slots.push(slot);
             }
-            
+
             if (config.switches.audienceScience) {
                 audienceScience.load(config.page);
             }
@@ -66,7 +64,7 @@ function (
             if (config.switches.quantcast) {
                 quantcast.load();
             }
-        
+
         }
 
         //Make the request to ad server
