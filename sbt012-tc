@@ -32,11 +32,11 @@ if [ -n "$BUILD_VCS_NUMBER" ]; then
   BUILD_PARAMS="${BUILD_PARAMS} -Dbuild.vcs.number=\"$BUILD_VCS_NUMBER\""
 fi 
 
-
 # Ivy configuration
 echo "setting ivy cache dir"
-IVY_PARAMS="-Dsbt.ivy.home=$HOME/.ivy2-frontend -Divy.home=$HOME/.ivy2-frontend"
+IVY_PARAMS="-Dsbt.ivy.home=.ivy -Divy.home=.ivy"
 echo $IVY_PARAMS
+
 
 # proxy that Play uses
 export proxy_host=devproxy.gul3.gnl
