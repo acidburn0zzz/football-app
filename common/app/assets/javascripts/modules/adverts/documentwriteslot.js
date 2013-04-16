@@ -19,9 +19,8 @@ define([
 
     DocWriteAdSlot.prototype.render = function () {
          try {
-            OAS_RICH(this.name);
             var slot = this.el;
-            domwrite.render(slot);
+            writeCapture.html(slot, '<script>OAS_RICH("'+this.name+'")<'+'/script>');
             this.loaded = true;
          } catch(e) {
              common.mediator.emit('module:error', e, 'document-write.js');
