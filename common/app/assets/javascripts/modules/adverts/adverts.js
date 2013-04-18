@@ -38,11 +38,8 @@ function (
         generateMiddleSlot(config);
 
         var slotHolders = document.querySelectorAll('.ad-slot'),
-            size = detect.getLayoutMode();
+            size = (detect.getLayoutMode() == 'mobile') ? 'base' : 'extended';
 
-        if (size == 'tablet' || size == 'desktop') {
-            size = 'extended';
-        }
 
         adsSwitchedOn = !userPrefs.isOff('adverts');
 
