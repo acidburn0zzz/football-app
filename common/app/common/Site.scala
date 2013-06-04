@@ -62,6 +62,11 @@ object Site extends Logging {
     Site(ukHost = "beta.guardian.co.uk", usHost = "beta.guardiannews.com",
       ukDesktopHost = "beta.guardian.co.uk", usDesktopHost = "beta.guardiannews.com",
       ukAjaxHost = "m.guardian.co.uk", usAjaxHost = "m.guardiannews.com"
+    ),
+
+    Site(ukHost = "www.theguardian.com", usHost = "www.theguardian.com",
+      ukDesktopHost = "www.theguardian.com", usDesktopHost = "www.theguardian.com",
+      ukAjaxHost = "football.guardianapps.co.uk", usAjaxHost = "football.guardianapps.co.uk"
     )
   ).flatMap(site => Seq(
       site.ukHost -> site.copy(edition = "UK"),
