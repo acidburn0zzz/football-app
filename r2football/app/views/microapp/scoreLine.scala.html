@@ -1,7 +1,10 @@
 @(fMatch: pa.FootballMatch, comp: model.Competition)
 @import implicits.Football._
 
-<h2 data="@comp.id">@comp.fullName</h2>
+<h2>@(fMatch.homeTeam.name) @{fMatch.homeTeam.score getOrElse 0} @(fMatch.awayTeam.name) @{fMatch.awayTeam.score getOrElse 0}</h2>
+
+<p data="@comp.id"><strong>@comp.fullName</strong></p>
+
 <table>
     <tbody>
     <tr>
