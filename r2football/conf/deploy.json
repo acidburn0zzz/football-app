@@ -1,12 +1,13 @@
 {
     "packages":{
         "frontend-r2football":{
-            "type":"asg-elb",
+            "type":"autoscaling",
             "apps":[ "frontend::football" ],
             "data":{
-                "secondsToWait":900,
+                "secondsToWait":1200,
                 "port":18080,
                 "bucket":"aws-frontend-artifacts",
+                "healthcheckGrace":20,
                 "healthcheck_paths":[
                     "/management/healthcheck"
                 ]
