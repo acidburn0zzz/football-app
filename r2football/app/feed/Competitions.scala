@@ -106,6 +106,8 @@ trait Competitions extends CompetitionSupport with AkkaSupport with Logging with
 
   val competitionAgents = Seq(
 
+    CompetitionAgent(Competition("700", "/football/world-cup-2014", "World Cup 2014", "World Cup 2014", "Internationals", showInTeamsList = false)),
+
     CompetitionAgent(Competition("100", "/football/premierleague", "Premier League", "Premier League", "English", showInTeamsList = true)),
 
     CompetitionAgent(Competition("500", "/football/championsleague", "Champions League", "Champions League", "European")),
