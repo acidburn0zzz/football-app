@@ -19,7 +19,7 @@ trait LiveScoresComponentController extends Controller with Football with Reques
 
   def renderScores() = {
     renderMatchNav(None) { (nav, comp, request) =>
-      val ajaxUrl = Site(request).ajaxHost + "/football/api/microapp/scores/" + nav.theMatch.id
+      val ajaxUrl = "http://" + Site(request).ajaxHost + "/football/api/microapp/scores/" + nav.theMatch.id
       Ok(Compressed(views.html.microapp.matchLiveScore(nav, comp, ajaxUrl)))
     }
   }
