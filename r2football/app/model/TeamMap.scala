@@ -90,7 +90,7 @@ object TeamMap extends AkkaSupport with Logging {
     ("6901", "Steaua"),
     ("26412", "Copenhagen"),
     ("38429", "Videoton"),
-    ("26268", "Gijón"),
+    ("26268", "Sporting"),
     ("6136", "Inter"),
     ("6935", "Partizan"),
     ("56055", "H Kiryat Shmona"),
